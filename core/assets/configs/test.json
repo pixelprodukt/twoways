@@ -1,0 +1,28 @@
+[
+    {
+        "text": "You meet a group of wanderers. They look hungry and worn out.",
+        "choices": [
+            {
+                "label": "Help them",
+                "outcomes": [
+                    {
+                        "propability": 33,
+                        "type": "BATTLE",
+                        "text": "You ask if they need any help. They ask you to come closer. Suddenly the start attacking you!",
+                        "loot": []
+                    },
+                    {
+                        "propability": 66,
+                        "type": "FRIENDLY",
+                        "text": "You ask if they need any help. They gladly accept your offer. They give you some stuff they can spare to thank you.",
+                        "loot": []
+                    }
+                ]
+            },
+            {
+                "label": "Ignore them",
+                "outcomes": []
+            }
+        ]
+    }
+]
