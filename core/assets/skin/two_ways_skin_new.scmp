@@ -78,6 +78,25 @@ atlasData: {
 			type: NINE_PATCH
 			hidden: false
 		}
+		{
+			file: D:/coding/java/libgdx/twoways/core/assets/images/new_graphics/label_background_ninepatch.9.png
+			bgColor: {
+				r: 0
+				g: 0
+				b: 0
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: label_background_ninepatch
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			type: NINE_PATCH
+			hidden: false
+		}
 	]
 	fontDrawables: []
 }
@@ -116,9 +135,9 @@ jsonData: {
 		{
 			class: com.ray3k.skincomposer.data.ColorData
 			color: {
-				r: 0.8627451
-				g: 0.84313726
-				b: 0.7607843
+				r: 0.97
+				g: 0.96230096
+				b: 0.93443334
 				a: 1
 			}
 			name: RGBA_220_215_194_255
@@ -171,7 +190,7 @@ jsonData: {
 			file: D:/coding/java/libgdx/two-ways-game/core/assets/fonts/Lato/Lato-Regular.ttf
 			previewTTF: SourceSansPro-Regular
 			useCustomSerializer: true
-			size: 34
+			size: 26
 			mono: false
 			hinting: AutoMedium
 			color: RGBA_220_215_194_255
@@ -185,7 +204,7 @@ jsonData: {
 			shadowOffsetY: 0
 			shadowColor: null
 			spaceX: 0
-			spaceY: 0
+			spaceY: 10
 			characters: ""
 			kerning: true
 			flip: false
@@ -590,19 +609,19 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: Lato-Regular
+						value: Lato-Black
 					}
 					fontColor: {
 						type: com.badlogic.gdx.graphics.Color
 						name: fontColor
 						optional: true
-						value: RGBA_240_235_210_255
+						value: RGBA_220_215_194_255
 					}
 					background: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: background
 						optional: true
-						value: null
+						value: label_background_ninepatch
 					}
 				}
 				deletable: false
@@ -803,7 +822,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.Color
 						name: fontColor
 						optional: true
-						value: null
+						value: RGBA_240_235_210_255
 					}
 					downFontColor: {
 						type: com.badlogic.gdx.graphics.Color
@@ -1851,7 +1870,7 @@ preferences: {
 	}
 	last-import-export-path: {
 		class: java.lang.String
-		value: D:/coding/java/libgdx/two-ways-game/core/assets/skin/two_ways_skin_new.json
+		value: D:/coding/java/libgdx/twoways/core/assets/skin/two_ways_skin_new.json
 	}
 	resources-relative: {
 		class: java.lang.Boolean
@@ -1862,7 +1881,7 @@ preferences: {
 		value: 30
 	}
 }
-saveFile: D:/coding/java/libgdx/two-ways-game/core/assets/skin/two_ways_skin_new.scmp
+saveFile: D:/coding/java/libgdx/twoways/core/assets/skin/two_ways_skin_new.scmp
 version: 46
 sceneComposer: null
 }

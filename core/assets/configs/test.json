@@ -1,27 +1,21 @@
 [
     {
-        "text": "You meet a group of wanderers. They look hungry and worn out.",
+        "title": "An unexpected Group",
+        "text": "You see a gang of marauders. Their leader is shouting something in your direction, but you don't understand him. The others are waving with their weapons.",
         "choices": [
             {
-                "label": "Help them",
-                "outcomes": [
-                    {
-                        "propability": 33,
-                        "type": "BATTLE",
-                        "text": "You ask if they need any help. They ask you to come closer. Suddenly the start attacking you!",
-                        "loot": []
-                    },
-                    {
-                        "propability": 66,
-                        "type": "FRIENDLY",
-                        "text": "You ask if they need any help. They gladly accept your offer. They give you some stuff they can spare to thank you.",
-                        "loot": []
-                    }
-                ]
+                "label": "Attack them",
+                "type": "BATTLE",
+                "configuration": {
+                    "text": "Hello"
+                }
             },
             {
-                "label": "Ignore them",
-                "outcomes": []
+                "label": "Try to flee",
+                "type": "ESCAPE",
+                "configuration": {
+                    "text": "Hello 2"
+                }
             }
         ]
     }

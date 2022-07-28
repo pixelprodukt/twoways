@@ -14,11 +14,9 @@ import ktx.app.KtxScreen
 
 class CreditsScreen(private val game: TwoWaysGame) : KtxScreen {
 
-    private val fontskin = FreeTypeSkin(Gdx.files.internal("skin/two_ways_skin_new.json"))
-
     private val stage = Stage(ScalingViewport(Scaling.fill, GameConfig.VIEWPORT_WIDTH, GameConfig.VIEWPORT_HEIGHT))
     private val layoutTable = Table()
-    private val label = Label("Design by pixelprodukt\n\nProgramming by pixelprodukt", fontskin)
+    private val label = Label("Design by pixelprodukt\n\nProgramming by pixelprodukt", game.fontskin)
 
     init {
         layoutTable.setFillParent(true)

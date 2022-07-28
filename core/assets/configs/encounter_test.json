@@ -1,0 +1,36 @@
+{
+    "initialText": "You see a gang of marauders. Their leader is shouting something in your direction, but you don't understand him. The others are waving with their weapons.",
+    "choices": [
+        {
+            "label": "Attack them",
+            "type": "BATTLE",
+            "configuration": {
+                "enemies": [
+                    {}
+                ],
+                "onSuccess": {
+                    "text": "You defeated all enemies.",
+                    "loot": [],
+                    "skillExperience": []
+                },
+                "onFailure": {
+                    "text": "Oh no! You lost! You are an embarrassement!"
+                }
+            }
+        },
+        {
+            "label": "Try to flee",
+            "type": "ESCAPE",
+            "configuration": {
+                "skillChecks": [
+                    {
+                        "skill": "DEXTERITY",
+                        "value": 20
+                    }
+                ],
+                "onSuccess": {},
+                "onFailure": {}
+            }
+        }
+    ]
+}

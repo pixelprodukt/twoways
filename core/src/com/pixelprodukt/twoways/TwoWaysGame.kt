@@ -4,12 +4,8 @@ import com.badlogic.gdx.Game
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.Screen
-import com.badlogic.gdx.files.FileHandle
-import com.badlogic.gdx.scenes.scene2d.*
-import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton
-import com.badlogic.gdx.scenes.scene2d.ui.Table
-import com.google.gson.Gson
-import com.pixelprodukt.twoways.config.EncounterConfig
+import com.badlogic.gdx.graphics.g2d.SpriteBatch
+import com.pixelprodukt.twoways.config.Assets
 import com.pixelprodukt.twoways.enums.View
 import com.pixelprodukt.twoways.screens.CreditsScreen
 import com.pixelprodukt.twoways.screens.EncounterScreen
@@ -19,19 +15,16 @@ import ktx.app.clearScreen
 
 class TwoWaysGame : Game() {
 
-    lateinit var gson: Gson
-    lateinit var file: FileHandle
-    lateinit var encounterConfig: List<EncounterConfig>
+    lateinit var fontskin: FreeTypeSkin
+    lateinit var batch: SpriteBatch
 
     lateinit var mainMenuScreen: MainMenuScreen
     lateinit var encounterScreen: EncounterScreen
     lateinit var creditsScreen: CreditsScreen
 
     override fun create() {
-        gson = Gson()
-        file = Gdx.files.internal("configs/test.json")
-        encounterConfig = gson.fromJson(file.readString(), List::class.java) as List<EncounterConfig>
-        Gdx.app.log("json", "${encounterConfig}")
+        fontskin = FreeTypeSkin(Gdx.files.internal(Assets.SKIN))
+        batch = SpriteBatch()
 
         mainMenuScreen = MainMenuScreen(this)
         encounterScreen = EncounterScreen(this)

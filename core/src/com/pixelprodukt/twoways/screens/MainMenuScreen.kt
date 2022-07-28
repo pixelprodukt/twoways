@@ -1,7 +1,8 @@
 package com.pixelprodukt.twoways.screens
 
-import com.badlogic.gdx.Game
 import com.badlogic.gdx.Gdx
+import com.badlogic.gdx.graphics.Texture
+import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.Touchable
@@ -12,22 +13,25 @@ import com.badlogic.gdx.utils.Align
 import com.badlogic.gdx.utils.Scaling
 import com.badlogic.gdx.utils.viewport.ScalingViewport
 import com.pixelprodukt.twoways.TwoWaysGame
+import com.pixelprodukt.twoways.config.Assets
 import com.pixelprodukt.twoways.config.GameConfig
 import com.pixelprodukt.twoways.enums.View
 import com.ray3k.stripe.FreeTypeSkin
 import ktx.app.KtxScreen
+import ktx.graphics.use
 
 class MainMenuScreen(private val game: TwoWaysGame) : KtxScreen {
-
-    private val fontskin = FreeTypeSkin(Gdx.files.internal("skin/two_ways_skin_new.json"))
 
     private val stage = Stage(ScalingViewport(Scaling.fill, GameConfig.VIEWPORT_WIDTH, GameConfig.VIEWPORT_HEIGHT))
     private val layoutTable = Table()
 
-    private val btnStart = ImageTextButton("Start", fontskin)
-    private val btnLoad = ImageTextButton("Load", fontskin)
-    private val btnOptions = ImageTextButton("Options", fontskin)
-    private val btnCredits = ImageTextButton("Credits", fontskin)
+    private val btnStart = ImageTextButton("Start", game.fontskin)
+    private val btnLoad = ImageTextButton("Load", game.fontskin)
+    private val btnOptions = ImageTextButton("Options", game.fontskin)
+    private val btnCredits = ImageTextButton("Credits", game.fontskin)
+
+    private val titleTexture = Texture(Assets.TITLE_FONT_IMG)
+    private val mainmenuBackgroundTexture = Texture(Assets.TITLE_BACKGROUND_IMG)
 
     init {
         initMenuLayout()
@@ -69,6 +73,10 @@ class MainMenuScreen(private val game: TwoWaysGame) : KtxScreen {
     }
 
     override fun render(delta: Float) {
+        game.batch.use { batch ->
+            batch.draw(mainmenuBackgroundTexture, 0.0f, 0.0f)
+            batch.draw(titleTexture, (GameConfig.VIEWPORT_WIDTH - titleTexture.width) / 2, 700.0f)
+        }
         stage.act(Gdx.graphics.deltaTime)
         stage.draw()
     }
